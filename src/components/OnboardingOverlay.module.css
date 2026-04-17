@@ -1,0 +1,44 @@
+.overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200; padding: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 100%; max-width: 500px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.icon {
+  width: 52px; height: 52px; background: var(--teal-400);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+
+.title { font-size: 20px; font-weight: 500; color: var(--text-primary); margin-bottom: 4px; }
+.subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+
+.tips { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.tip { display: flex; gap: 14px; align-items: flex-start; }
+.tipIcon { width: 34px; height: 34px; border-radius: var(--radius-md); background: var(--teal-50); color: var(--teal-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.tipTitle { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
+.tipDesc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+.btn {
+  width: 100%; padding: 12px;
+  border-radius: var(--radius-md); border: none;
+  background: var(--teal-400); color: white;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  font-family: var(--font-sans); transition: background 0.12s;
+}
+.btn:hover { background: var(--teal-600); }

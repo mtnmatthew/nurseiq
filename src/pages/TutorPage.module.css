@@ -1,0 +1,143 @@
+.layout { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: var(--surface); }
+
+.topbar { padding: 11px 20px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; background: var(--surface); }
+.topLeft { display: flex; align-items: center; gap: 10px; }
+.topTitle { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+.modelPill { display: flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; border: 0.5px solid var(--border-strong); font-size: 12px; color: var(--text-secondary); cursor: pointer; transition: all 0.12s; }
+.modelPill:hover { background: var(--surface-2); }
+.topBadges { display: flex; gap: 6px; }
+.badgeTeal { padding: 3px 10px; border-radius: 20px; font-size: 11px; background: var(--teal-50); color: var(--teal-800); border: 0.5px solid var(--teal-100); }
+.badgeAmber { padding: 3px 10px; border-radius: 20px; font-size: 11px; background: var(--amber-50); color: var(--amber-800); border: 0.5px solid var(--amber-100); }
+
+.chatScroll { flex: 1; overflow-y: auto; }
+.chatInner { max-width: 680px; margin: 0 auto; padding: 24px 20px; display: flex; flex-direction: column; gap: 20px; }
+
+.userRow { display: flex; justify-content: flex-end; }
+.userBubble { background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 18px 18px 4px 18px; padding: 11px 16px; max-width: 78%; font-size: 14px; line-height: 1.65; color: var(--text-primary); }
+
+.aiRow { display: flex; gap: 12px; align-items: flex-start; }
+.aiAvatar { width: 28px; height: 28px; border-radius: 50%; background: var(--teal-50); border: 0.5px solid var(--teal-100); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; color: var(--teal-800); flex-shrink: 0; margin-top: 2px; }
+.aiContent { flex: 1; min-width: 0; }
+.aiName { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 5px; }
+.aiText { font-size: 14px; line-height: 1.75; color: var(--text-primary); }
+
+.aiActions { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+.aiActionBtn { display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 20px; border: 0.5px solid var(--border); background: transparent; font-size: 12px; color: var(--text-muted); cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.aiActionBtn:hover { border-color: var(--border-strong); color: var(--text-secondary); background: var(--surface-2); }
+
+.typing { display: flex; gap: 4px; align-items: center; padding: 6px 0; }
+.typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-400); animation: bounce 1s infinite; }
+.typing span:nth-child(2) { animation-delay: 0.15s; }
+.typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+
+.inputArea { padding: 14px 20px 16px; border-top: 0.5px solid var(--border); flex-shrink: 0; background: var(--surface); }
+.inputWrap { max-width: 680px; margin: 0 auto; }
+.inputOuter { border: 0.5px solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; transition: border-color 0.12s; }
+.inputOuter:focus-within { border-color: var(--teal-400); }
+
+.inputPills { display: flex; gap: 5px; padding: 10px 14px 0; flex-wrap: wrap; }
+.pill { padding: 4px 10px; border-radius: 20px; border: 0.5px solid var(--border); font-size: 12px; color: var(--text-secondary); cursor: pointer; background: transparent; font-family: var(--font-sans); transition: all 0.12s; white-space: nowrap; }
+.pill:hover { border-color: var(--teal-100); color: var(--teal-800); background: var(--teal-50); }
+
+.inputBox { width: 100%; padding: 10px 14px; border: none; font-family: var(--font-sans); font-size: 14px; color: var(--text-primary); background: transparent; resize: none; line-height: 1.5; outline: none; }
+.inputFooter { padding: 8px 14px; display: flex; align-items: center; gap: 10px; border-top: 0.5px solid var(--border); }
+.sendBtn { width: 34px; height: 34px; border-radius: 8px; background: var(--teal-400); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.12s; margin-left: auto; flex-shrink: 0; }
+.sendBtn:hover { background: var(--teal-600); }
+.sendBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.inputHint { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px; }
+.memoryBadge { padding: 2px 8px; border-radius: 20px; font-size: 10px; background: var(--teal-50); color: var(--teal-800); border: 0.5px solid var(--teal-100); }
+.clearBtn { padding: 3px 10px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-muted); font-size: 11px; cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.clearBtn:hover { background: var(--red-50); color: var(--red-800); border-color: #F7C1C1; }
+.memoryNote { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+.badgePurple { padding: 3px 10px; border-radius: 20px; font-size: 11px; background: #EEEDFE; color: #3C3489; border: 0.5px solid #CECBF6; }
+.uploadBtn { display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-secondary); font-size: 12px; cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.uploadBtn:hover { background: var(--surface-2); border-color: var(--teal-100); color: var(--teal-800); }
+.uploadBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.inputLeft { display: none; }
+.uploadedFile { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--teal-50); border: 0.5px solid var(--teal-100); border-radius: var(--radius-md); font-size: 12px; color: var(--teal-800); margin-bottom: 6px; }
+.uploadedFile button { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--teal-600); font-size: 14px; }
+.uploadIconBtn {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--border-strong);
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.12s;
+  flex-shrink: 0;
+}
+.uploadIconBtn:hover { background: var(--surface-2); border-color: var(--teal-100); color: var(--teal-800); }
+.uploadIconBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.dragOver { border: 2px dashed var(--teal-400) !important; }
+.dropOverlay { position: absolute; inset: 0; background: rgba(29,158,117,0.08); display: flex; align-items: center; justify-content: center; z-index: 10; pointer-events: none; border-radius: var(--radius-lg); }
+.dropMsg { display: flex; flex-direction: column; align-items: center; gap: 10px; background: var(--surface); border: 2px dashed var(--teal-400); border-radius: var(--radius-lg); padding: 32px 48px; color: var(--teal-800); font-size: 16px; font-weight: 500; }
+.classChips { margin-bottom: 16px; }
+.classChipsLabel { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+.classChipsRow { display: flex; flex-wrap: wrap; gap: 6px; }
+.classChip { padding: 6px 14px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: var(--surface-2); color: var(--text-secondary); font-size: 13px; cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.classChip:hover { background: var(--teal-50); border-color: var(--teal-100); color: var(--teal-800); }
+.addClassBar { padding: 10px 20px; border-top: 0.5px solid var(--border); background: var(--surface-2); display: flex; gap: 8px; align-items: center; }
+.addClassInput { flex: 1; padding: 8px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-md); font-size: 13px; background: var(--surface); color: var(--text-primary); font-family: var(--font-sans); }
+.addClassInput:focus { outline: none; border-color: var(--teal-400); }
+.addClassConfirm { padding: 8px 16px; border-radius: var(--radius-md); border: none; background: var(--teal-400); color: white; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); }
+.addClassConfirm:hover { background: var(--teal-600); }
+.addClassCancel { padding: 8px 12px; border-radius: var(--radius-md); border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-secondary); font-size: 13px; cursor: pointer; font-family: var(--font-sans); }
+.addClassBtn { display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-secondary); font-size: 12px; cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.addClassBtn:hover { background: var(--teal-50); border-color: var(--teal-100); color: var(--teal-800); }
+.uploadIconBtn { width: 34px; height: 34px; border-radius: var(--radius-md); border: 0.5px solid var(--border-strong); background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-secondary); transition: all 0.12s; flex-shrink: 0; }
+.uploadIconBtn:hover { background: var(--surface-2); border-color: var(--teal-100); color: var(--teal-800); }
+.uploadIconBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.skillMapPrompt { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-top: 0.5px solid var(--teal-100); background: var(--teal-50); flex-shrink: 0; flex-wrap: wrap; }
+.skillMapText { flex: 1; font-size: 13px; color: var(--teal-800); line-height: 1.4; min-width: 200px; }
+.skillMapConfirm { padding: 6px 14px; border-radius: var(--radius-md); border: none; background: var(--teal-400); color: white; font-size: 12px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); white-space: nowrap; transition: background 0.12s; }
+.skillMapConfirm:hover { background: var(--teal-600); }
+.skillMapDismiss { padding: 6px 10px; border-radius: var(--radius-md); border: 0.5px solid var(--teal-100); background: transparent; color: var(--teal-600); font-size: 12px; cursor: pointer; font-family: var(--font-sans); white-space: nowrap; }
+.skillMapDismiss:hover { background: var(--teal-100); }
+.showImageBtn {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 10px; padding: 8px 16px;
+  border-radius: var(--radius-md);
+  background: var(--teal-50); border: 0.5px solid var(--teal-100);
+  color: var(--teal-800); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.12s;
+}
+.showImageBtn:hover { background: var(--teal-100); border-color: var(--teal-400); }
+.stopBtn { width: 34px; height: 34px; border-radius: 8px; border: none; background: var(--teal-400); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.12s; flex-shrink: 0; margin-left: auto; }
+.stopBtn:hover { background: var(--red-400); }
+
+/* Upload banner */
+.uploadBanner { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: var(--teal-50); border-bottom: 0.5px solid var(--teal-100); flex-shrink: 0; }
+.uploadBannerIcon { width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--teal-400); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+.uploadBannerContent { flex: 1; }
+.uploadBannerTitle { font-size: 13px; font-weight: 500; color: var(--teal-800); margin-bottom: 2px; }
+.uploadBannerDesc { font-size: 12px; color: var(--teal-600); line-height: 1.5; }
+.uploadBannerBtn { padding: 7px 16px; border-radius: var(--radius-md); border: none; background: var(--teal-400); color: white; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); white-space: nowrap; flex-shrink: 0; transition: background 0.12s; }
+.uploadBannerBtn:hover { background: var(--teal-600); }
+
+/* Skill map modal */
+.skillMapBanner { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-top: 0.5px solid var(--teal-100); background: var(--teal-50); flex-shrink: 0; }
+.skillMapBannerText { font-size: 13px; color: var(--teal-800); flex: 1; }
+.skillMapModal { border-top: 0.5px solid var(--border); background: var(--surface); flex-shrink: 0; }
+.skillMapModalHeader { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 0.5px solid var(--border); }
+.skillMapModalTitle { font-size: 14px; font-weight: 500; color: var(--text-primary); flex: 1; }
+.skillMapModalBody { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+.skillMapModalFooter { padding: 12px 16px; border-top: 0.5px solid var(--border); display: flex; gap: 8px; }
+.skillMapField { display: flex; flex-direction: column; gap: 5px; }
+.skillMapFieldLabel { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.skillMapFieldInput { padding: 8px 12px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-md); font-size: 14px; color: var(--text-primary); background: var(--surface-2); font-family: var(--font-sans); font-weight: 500; }
+.skillMapFieldInput:focus { outline: none; border-color: var(--teal-400); }
+.skillMapCategory { display: flex; align-items: center; gap: 8px; }
+.skillMapCategoryBadge { padding: 4px 12px; border-radius: 20px; background: var(--teal-50); border: 0.5px solid var(--teal-100); color: var(--teal-800); font-size: 13px; font-weight: 500; }
+.skillMapCategoryNew { padding: 4px 12px; border-radius: 20px; background: var(--surface-2); border: 0.5px dashed var(--border-strong); color: var(--text-secondary); font-size: 13px; }
+.skillMapSubtopics { display: flex; flex-wrap: wrap; gap: 5px; }
+.skillMapSubtopic { padding: 3px 10px; border-radius: 20px; background: var(--surface-2); border: 0.5px solid var(--border); color: var(--text-secondary); font-size: 12px; }
+.skillMapConfirm { display: flex; align-items: center; gap: 6px; padding: 8px 18px; border-radius: var(--radius-md); border: none; background: var(--teal-400); color: white; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); transition: background 0.12s; }
+.skillMapConfirm:hover { background: var(--teal-600); }
+.skillMapDismissBtn { padding: 8px 14px; border-radius: var(--radius-md); border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-secondary); font-size: 13px; cursor: pointer; font-family: var(--font-sans); }
+.skillMapDismiss { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 16px; padding: 2px; line-height: 1; display: flex; align-items: center; }
+.skillMapDismiss:hover { color: var(--text-primary); }

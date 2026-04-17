@@ -1,0 +1,64 @@
+.layout { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: var(--surface-2); }
+.topbar { padding: 14px 24px; border-bottom: 0.5px solid var(--border); background: var(--surface); flex-shrink: 0; }
+.topTitle { font-size: 16px; font-weight: 500; color: var(--text-primary); }
+.topMeta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.body { flex: 1; overflow-y: auto; padding: 20px 24px; }
+
+.searchWrap { max-width: 860px; margin: 0 auto 20px; }
+.searchRow { display: flex; gap: 8px; margin-bottom: 10px; }
+.searchInput { flex: 1; padding: 11px 16px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-md); font-size: 14px; background: var(--surface); color: var(--text-primary); font-family: var(--font-sans); transition: border-color 0.12s; }
+.searchInput:focus { outline: none; border-color: var(--teal-400); }
+.searchBtn { padding: 11px 22px; border-radius: var(--radius-md); border: none; background: var(--teal-400); color: white; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); white-space: nowrap; display: flex; align-items: center; gap: 6px; min-width: 90px; justify-content: center; }
+.searchBtn:hover { background: var(--teal-600); }
+.searchBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.quickRow { display: flex; flex-wrap: wrap; gap: 5px; }
+.quickChip { padding: 4px 11px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: var(--surface); color: var(--text-secondary); font-size: 12px; cursor: pointer; font-family: var(--font-sans); transition: all 0.12s; }
+.quickChip:hover { background: var(--teal-50); border-color: var(--teal-100); color: var(--teal-800); }
+.quickChipActive { background: var(--teal-50) !important; border-color: var(--teal-400) !important; color: var(--teal-800) !important; font-weight: 500; }
+
+.emptyState { text-align: center; padding: 40px 20px; max-width: 600px; margin: 0 auto; }
+.emptyIcon { margin-bottom: 16px; }
+.emptyText { font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
+.emptySub { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 28px; }
+.refSection { text-align: left; }
+.refLabel { font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; text-align: center; }
+.refGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.refCard { padding: 12px 14px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-md); text-decoration: none; transition: all 0.12s; }
+.refCard:hover { border-color: var(--teal-200); background: var(--teal-50); }
+.refName { font-size: 13px; font-weight: 500; color: var(--teal-600); margin-bottom: 3px; }
+.refDesc { font-size: 11px; color: var(--text-muted); }
+
+.results { max-width: 860px; margin: 0 auto; }
+
+.actionBar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-md); margin-bottom: 16px; flex-wrap: wrap; }
+.actionLabel { font-size: 13px; color: var(--text-secondary); flex: 1; min-width: 120px; }
+.actionBtn { display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: var(--surface-2); color: var(--text-secondary); font-size: 12px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.12s; font-family: var(--font-sans); }
+.actionBtn:hover { background: var(--teal-50); border-color: var(--teal-100); color: var(--teal-800); }
+.actionBtnPrimary { display: flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: 20px; border: none; background: var(--teal-400); color: white; font-size: 12px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.12s; }
+.actionBtnPrimary:hover { background: var(--teal-600); }
+
+.explanationCard { background: var(--surface); border: 0.5px solid var(--border); border-left: 3px solid var(--teal-400); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 16px 18px; margin-bottom: 16px; }
+.explanationLabel { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 600; color: var(--teal-600); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.explanationText { font-size: 14px; color: var(--text-primary); line-height: 1.8; }
+.loadingDots { display: flex; gap: 5px; padding: 8px 0; }
+.loadingDots span { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-400); animation: bounce 1s infinite; }
+.loadingDots span:nth-child(2) { animation-delay: 0.15s; }
+.loadingDots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+.imageLinksSection { }
+.imageLinksLabel { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.imageLinksGrid { display: flex; flex-direction: column; gap: 6px; }
+.imageLinkCard { display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-md); text-decoration: none; transition: all 0.12s; cursor: pointer; }
+.imageLinkCard:hover { border-color: var(--teal-200); background: var(--teal-50); transform: translateX(2px); }
+.imageLinkCardPrimary { border-color: var(--teal-100) !important; background: var(--teal-50) !important; }
+.imageLinkCardPrimary:hover { border-color: var(--teal-400) !important; background: var(--teal-100) !important; }
+.imageLinkIcon { width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--surface-2); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal-600); flex-shrink: 0; }
+.imageLinkCardPrimary .imageLinkIcon { background: var(--teal-400); border-color: var(--teal-400); color: white; }
+.imageLinkContent { flex: 1; }
+.imageLinkTitle { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+.imageLinkCardPrimary .imageLinkTitle { color: var(--teal-800); }
+.imageLinkDesc { font-size: 12px; color: var(--text-muted); }
+.imageLinkArrow { font-size: 16px; color: var(--teal-400); font-weight: 500; }
