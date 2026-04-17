@@ -40,11 +40,13 @@ export async function getUser() {
 // Each function syncs a piece of data to Supabase, falling back to localStorage
 
 export async function syncMastery(userId, mastery) {
-  await supabase.from('user_mastery').upsert({
+  const { error } = await supabase.from('user_mastery').upsert({
     user_id: userId,
     data: mastery,
     updated_at: new Date().toISOString()
   }, { onConflict: 'user_id' })
+  if (error) console.error('syncMastery error:', error.message, error.code)
+  else console.log('syncMastery: OK')
 }
 
 export async function loadMasteryCloud(userId) {
